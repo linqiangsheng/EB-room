@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css"/>
+    <script src="/javascripts/ref/jquery-1.10.2.min.js"></script>
+    <script src="/javascripts/ref/socket.io.js"></script>
+    <script src="/javascripts/ref/jwplayer.js"></script>
+    <script src="/javascripts/ref/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="site-wrapper">
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <form action="/admin" method="post">
+                    <div class="">
+                        <h1 style="color:#FFF">Exclusive URL!</h1>
+                    </div>
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon" id="sizing-addon1">url</span>
+                        <input type="text" class="form-control" placeholder="url" aria-describedby="sizing-addon1" name="url">
+                    </div>
+                    <br/>
+
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon" id="sizing-addon2">Title</span>
+                        <input type="text" class="form-control" placeholder="Title" aria-describedby="sizing-addon2" name="title">
+                    </div>
+                    <br/>
+
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon" id="sizing-addon3">Speaker</span>
+                        <input type="text" class="form-control" placeholder="Speaker" aria-describedby="sizing-addon3" name="speaker">
+                    </div>
+                    <br/>
+
+                    <!-- Indicates a successful or positive action -->
+                    <button type="submit" class="btn btn-primary btn-lg">Sure! Get URL.</button>
+                    </form>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script src="/javascripts/index.js"></script>
+</body>
+</html>

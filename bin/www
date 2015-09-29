@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+var app = require('../app');
+app.set('port', process.env.PORT || 996);
+app.get('server').listen(app.get('port'));
+console.log('Express server listening on port ' + app.get('port'));

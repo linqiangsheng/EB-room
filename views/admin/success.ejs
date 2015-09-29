@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css"/>
+    <script src="/javascripts/ref/jquery-1.10.2.min.js"></script>
+    <script src="/javascripts/ref/socket.io.js"></script>
+    <script src="/javascripts/ref/jwplayer.js"></script>
+    <script src="/javascripts/ref/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="site-wrapper">
+    <div class="site-wrapper-inner">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="">
+                <h1 style="color:#FFF">Broadcast URL!</h1>
+            </div>
+            <div class="alert alert-success" role="alert">
+                <a href="http://<%= host %>/room?key=<%= md5 %>" class="alert-link">http://<%= host %>
+                    /room?key=<%= md5 %></a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
