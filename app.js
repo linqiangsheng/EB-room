@@ -17,7 +17,9 @@ app.use(cookieParser());
 app.use(session({
         secret: "room V1.0.1",
         key   : "room",
-        store :obSession
+        store :obSession,
+        resave : false,
+        saveUninitialized : true
     })
 );
 // view engine setup
