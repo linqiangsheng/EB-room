@@ -77,7 +77,7 @@ jwplayer('myplayer').setup({
     stretching: "exactfit"
 });
 var el_can = $("#myplayer");
-el_can.parent().css("height", 700).css("background", "#000");
+el_can.parent().css("height", 700);
 el_can.css("margin-top", (700 - y) / 2);
 $("#btn-join").click(function () {
     var el_input = $("#input-name");
@@ -103,3 +103,18 @@ $(document).keypress(function(event){
     }
 });
 
+$('#draw-handle .icon-pull, #draw-handle .icon-push').click(function(){
+    var el_icon = $(this);
+    if(el_icon.hasClass('icon-pull')){
+        $('.room-module').animate({right : 0}, 200, function(){
+            el_icon.removeClass('icon-pull').addClass('icon-push');
+        });
+        $('.video-module').animate({'margin-right' : 404}, 200);
+    }else{
+        $('.room-module').animate({right : -344}, 200, function(){
+            el_icon.addClass('icon-pull').removeClass('icon-push');
+        });
+        $('.video-module').animate({'margin-right' : 50}, 200);
+    }
+
+});

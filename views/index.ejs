@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><%= title %> - <%= speaker%></title>
+    <title><%= title %> - <%= speaker %></title>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
     <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
     <link rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css"/>
@@ -22,88 +22,110 @@
                 <!--<div class="nav">
                     EB Room
                 </div>-->
-                <div class="col-md-7">
-                    <div id='myplayer'></div>
+                <div class="video-module">
+                    <div class="col-md-12">
+                        <div id='myplayer'></div>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <!-- 超叼的聊天室 -->
-                    <div class="room">
-                        <% if(!user){%>
-                        <div class="wrapper">
-                            <div class="wrapper-paper"></div>
-                            <div class="input-group">
-                                <input type="text" id="input-name" class="form-control" placeholder="Type your name...">
+                <div class="room-module">
+                    <div class="draw-handle" id="draw-handle">
+                        <div class="number-block">
+                            <i class="icon icon-user"></i>
+                            <p class="number-span">22</p>
+                        </div>
+                        <div class="number-block">
+                            <i class="icon icon-message"></i>
+                            <p class="number-span">22</p>
+                        </div>
+                        <div class="number-block">
+                            <i class="icon icon-pull"></i>
+                        </div>
+                    </div>
+                    <div class="room-content">
+                        <!-- 超屌的用户列表 -->
+                        <div class="user-list" id="div-user-list">
+                        </div>
+                        <!-- 超叼的聊天室 -->
+                        <div class="room">
+                            <% if(!user){ %>
+                            <div class="wrapper">
+                                <div class="wrapper-paper"></div>
+                                <div class="input-group">
+                                    <input type="text" id="input-name" class="form-control"
+                                           placeholder="Type your name...">
                                   <span class="input-group-btn">
                                     <button id="btn-join" class="btn btn-default" type="button">Join US</button>
                                   </span>
+                                </div>
                             </div>
-                        </div>
-                        <%}%>
-                        <div class="top row">
-                            <div class="col-md-3">
-                                <a class="btn btn-default btn-sm" href="#" role="button">Back</a>
+                            <% } %>
+                            <div class="top row">
+                                <div class="col-md-3">
+                                    <a class="btn btn-default btn-sm" href="#" role="button">Back</a>
+                                </div>
+                                <div class="els col-md-6">
+                                    <% if(title){ %>
+                                    <%= title %>
+                                    <% }else{ %>
+                                    Without Title!
+                                    <% } %>
+                                </div>
                             </div>
-                            <div class="els col-md-6">
-                                <% if(title){ %>
-                                <%= title %>
-                                <% }else{ %>
-                                Without Title!
-                                <% } %>
+                            <div class="content">
+                                <ul id="li-message-list">
+                                    <li class="mine">
+                                        <i class="portrait">林</i>
+
+                                        <p>Quis Wes Anderson ennui polarioid fingerstache, excepteur Pinterest.</p>
+                                        <span>Friday, January 21, 123123123</span>
+                                    </li>
+                                    <li class="other">
+                                        <i class="portrait">J</i>
+
+                                        <p>Quis Wes Anderson ennui polarioid fingerstache, excepteur Pinterest.</p>
+                                        <span>Friday, January 21, 123123123</span>
+                                    </li>
+                                    <li class="mine">
+                                        <i class="portrait">J</i>
+
+                                        <p>Quis Wes Anderson ennui polarioid fingerstache, excepteur Pinterest.
+                                            Quis Wes Anderson ennui polarioid fingerstache, excepteur Pinterest.
+                                            Quis Wes Anderson ennui polarioid fingerstache, excepteur Pinterest.</p>
+                                        <span>Friday, January 21, 123123123</span>
+                                    </li>
+                                    <li class="mine">
+                                        <i class="portrait">J</i>
+
+                                        <p>Quis Wes Anderson ennui polarioid fingerstache, excepteur Pinterest.
+                                            Quis Wes Anderson ennui polarioid fingerstache, excepteur Pinterest.
+                                            Quis Wes Anderson ennui polarioid fingerstache, excepteur Pinterest.</p>
+                                        <span>Friday, January 21, 123123123</span>
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="content">
-                            <ul id="li-message-list">
-                                <li class="mine">
-                                    <i class="portrait">林</i>
+                            <div class="box" id="div-send-box">
+                                <i class="portrait">
+                                    <% if(user){ %>
+                                    <%= user.firstWorld %>
+                                    <% }else{ %>
+                                    ?
+                                    <% } %>
+                                </i>
 
-                                    <p>Quis Wes Anderson ennui polarioid fingerstache, excepteur Pinterest.</p>
-                                    <span>Friday, January 21, 123123123</span>
-                                </li>
-                                <li class="other">
-                                    <i class="portrait">J</i>
-
-                                    <p>Quis Wes Anderson ennui polarioid fingerstache, excepteur Pinterest.</p>
-                                    <span>Friday, January 21, 123123123</span>
-                                </li>
-                                <li class="mine">
-                                    <i class="portrait">J</i>
-
-                                    <p>Quis Wes Anderson ennui polarioid fingerstache, excepteur Pinterest.
-                                        Quis Wes Anderson ennui polarioid fingerstache, excepteur Pinterest.
-                                        Quis Wes Anderson ennui polarioid fingerstache, excepteur Pinterest.</p>
-                                    <span>Friday, January 21, 123123123</span>
-                                </li>
-                                <li class="mine">
-                                    <i class="portrait">J</i>
-
-                                    <p>Quis Wes Anderson ennui polarioid fingerstache, excepteur Pinterest.
-                                        Quis Wes Anderson ennui polarioid fingerstache, excepteur Pinterest.
-                                        Quis Wes Anderson ennui polarioid fingerstache, excepteur Pinterest.</p>
-                                    <span>Friday, January 21, 123123123</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="box" id="div-send-box">
-                            <i class="portrait"><% if(user){%><%= user.firstWorld%><%}else{%>?<%}%></i>
-
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Type your message..." id="input-message">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Type your message..."
+                                           id="input-message">
                                   <span class="input-group-btn">
                                     <button class="btn btn-default" type="button" id="btn-send">Send</button>
-                                      <input type="hidden" value="<%= user.sessionID%>" id="input-sessionID">
+                                      <input type="hidden" value="<%= user.sessionID %>" id="input-sessionID">
                                   </span>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
-                <div class="col-md-1">
-                    <!-- 超屌的用户列表 -->
-                    <div class="user-list" id="div-user-list">
-                        <div class="top">
-                            <span id="user-number">0</span>
-                        </div>
-                    </div>
-                </div>
+
             </div>
 
             <div class="mastfoot">
@@ -129,9 +151,6 @@
 </script>
 
 <script type="text/x-handlebars-template" id="tpl-user-list">
-    <div class="top">
-        <span id="user-number">{{size}}</span>
-    </div>
     <ul>
         {{#each users}}
         <li>
